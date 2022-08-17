@@ -16,7 +16,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: busybox-sample
-        image: progrium/busybox
+        image: busybox
         resources:
           limits:
             cpu: 1
@@ -24,6 +24,8 @@ spec:
           requests:
             cpu: .1
             memory: 300M
+        ports:
+          - containerPort: 80
   selector:
     matchLabels:
       app: busybox-sample
